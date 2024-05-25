@@ -13,8 +13,12 @@ class MyComponent extends React.Component {
 
     handleOnchangeName = (event) => {
         this.setState({
-            name: event.target.value
+            name: event.target.va
         })
+    }
+
+    handleClickButton = () => {
+        alert('click me')
     }
     render() {
 
@@ -30,6 +34,9 @@ class MyComponent extends React.Component {
                 </div>
                 <div className="second">
                     My name is: {this.state.name}
+                </div>
+                <div className="thrid">
+                    <button onClick={() => this.handleClickButton()}>Click me</button>
                 </div>
             </React.Fragment>
         )
