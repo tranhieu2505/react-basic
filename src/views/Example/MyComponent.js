@@ -6,25 +6,34 @@ class MyComponent extends React.Component {
      * fragment
      */
     state = {
-        firtName: '',
-        lastName: ''
+        name: 'TranHieu',
+        address: 'HaNam',
+        age: '25'
     }
 
-    handleChangeFirtName = (event) => {
+    handleClick = (event) => {
+        // console.log(">> click me my button")
+        console.log("My name is: ", this.state.name, "Random age: ", this.state.age)
+
         this.setState({
-            firtName: event.target.value
+            name: 'eric',
+            age: Math.floor((Math.random() * 100) + 1)
         })
     }
 
-    handleChangeLastName = (event) => {
+    handleOnMoverOver(event) {
+        console.log(event.pageX)
+    }
+
+    handleOnChageInput = (event) => {
         this.setState({
-            lastName: event.target.value
+            name: event.target.value
         })
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-        console.log('>>>check data input: ', this.state)
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state)
     }
 
     render() {
@@ -32,25 +41,15 @@ class MyComponent extends React.Component {
         // let name = 'Hieu Tran';
 
         return (
-            <>
-                <form>
-                    <label htmlFor="fname">First name:</label><br />
-                    <input
-                        type="text"
-                        value={this.state.firtName}
-                        onChange={(event) => this.handleChangeFirtName(event)}
+            <div>
+                My name is {this.state.name} and I'm {this.state.age}
+                <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                    <input type="text"
+                        onChange={(event) => this.handleOnChageInput(event)}
                     />
-                    <br />
-                    <label htmlFor="lname">Last name:</label><br />
-                    <input
-                        type="text"
-                        value={this.state.lastName}
-                        onChange={(event) => this.handleChangeLastName(event)} /><br /><br />
-                    <input type="submit" value="Submit"
-                        onClick={(event) => this.handleSubmit(event)}
-                    />
+                    <button>Submit</button>
                 </form>
-            </>
+            </div>
         )
     }
 }
