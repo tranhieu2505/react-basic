@@ -1,25 +1,11 @@
 import React from "react";
-import UserInfor from "../../components/UserInfor";
 
-class MyComponent extends React.Component {
-    /**
-     * JSX => return block
-     * fragment
-     */
+class UserInfor extends React.Component {
+
     state = {
         name: 'TranHieu',
         address: 'HaNam',
         age: '25'
-    }
-
-    handleClick = (event) => {
-        // console.log(">> click me my button")
-        console.log("My name is: ", this.state.name, "Random age: ", this.state.age)
-
-        this.setState({
-            name: 'eric',
-            age: Math.floor((Math.random() * 100) + 1)
-        })
     }
 
     handleOnMoverOver(event) {
@@ -44,9 +30,6 @@ class MyComponent extends React.Component {
     }
 
     render() {
-        console.log('>> call render: ', this.state)
-        // let name = 'Hieu Tran';
-
         return (
             <div>
                 My name is {this.state.name} and I'm {this.state.age}
@@ -64,10 +47,9 @@ class MyComponent extends React.Component {
                     />
                     <button>Submit</button>
                 </form>
-                <UserInfor />
             </div>
         )
     }
 }
 
-export default MyComponent;
+export default UserInfor;

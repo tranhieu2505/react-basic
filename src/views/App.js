@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
-import MyComponent from './Example/MyComponent';
+import MyComponent from '../components/MyComponent';
 
 /***
  * 2 component: class component / function component (function, arrow)
