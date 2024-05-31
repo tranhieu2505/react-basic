@@ -8,15 +8,22 @@ class MyComponent extends React.Component {
      * fragment
      */
 
+    state = {
+        listUsers: [
+            { id: 1, name: "Tran Hieu0", age: "25" },
+            { id: 2, name: "Tran Hieu1", age: "26" },
+            { id: 3, name: "Tran Hieu2", age: "27" },
+        ]
+    }
     render() {
-
+        //DRY dont repeat yourself
         return (
             <div>
                 <UserInfor />
                 <br /><br />
-                <DisplayInfor name="TranHieuxx" age="22" />
-                <hr />
-                <DisplayInfor name="xxx" age="28" />
+                <DisplayInfor
+                    listUsers={this.state.listUsers}
+                />
             </div>
         )
     }
