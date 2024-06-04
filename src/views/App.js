@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.css';
 import MyComponent from '../components/MyComponent';
 
 /***
